@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#138FC2</color>
+    <color name="colorPrimaryDark">#138FC2</color>
+    <color name="colorPrimaryLight">#138FC2</color>
+    <color name="colorAccent">#138FC2</color>
+    <color name="colorlayout">#0B78A3</color>
+    <color name="layoutbackdround">#F1F1F1</color>
+
+    <color name="colorBackground">#138FC2</color>
+    <color name="colorDialogBorder">#CDCDCD</color>
+
+    <color name="colorListBg">#ffffff</color>
+    <color name="colorListDivider">#d8d8d8</color>
+    <color name="colorDashboardBorder">#e3e3e3</color>
+    <color name="bgTitleLeft">#594691</color>
+    <color name="contentDividerLine">#e0e0e0</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="titleBadgeTitle">#adafb1</color>
+    <color name="editTextColor">#8C8E88</color>
+    <color name="colorGreen">#3c6b96</color>
+
+    <color name="colorTextGreen">#3c6b96</color>
+    <color name="colorTextBlue">#007AFF</color>
+
+    <!-- <color name="colorTextBlue">#007AFF</color>-->
+    <color name="colorTextGray">#615F60</color>
+    <color name="colorTextBlack">#444444</color>
+    <color name="blackcolor">#BF000000</color>
+    <color name="black">#000</color>
+    <color name="graycolor">#9999</color>
+
+    <color name="colorLightGray">#E3E4DF</color>
+
+    <color name="separatorColor">#18102C</color>
+
+    <color name="orangeColor">#F2930A</color>
+
+    <color name="cashFlowGraphColor">#058DC7</color>
+
+    <color name="color1">#9CD430</color>
+    <color name="color4">#2475A2</color>
+    <color name="color3">#2096D7</color>
+    <color name="color2">#68AB06</color>
+
+    <integer-array name="google_colors">
+        <item>@color/color1</item>
+        <item>@color/color4</item>
+        <item>@color/color3</item>
+        <item>@color/color2</item>
+    </integer-array>
+    <integer name="default_type">0</integer>
+
+    <color name="bpm_delete">#D50000</color>
+    <color name="bpm_delete_press">#B71C1C</color>
+    <color name="bpm_approve">#CCDD66</color>
+    <color name="bpm_approve_press">#8BA029</color>
+    <color name="bpm_reject">#FF9501</color>
+    <color name="bpm_reject_press">#FF9400</color>
+    <color name="bpm_edit">#C8C7CD</color>
+    <color name="bpm_edit_press">#BFBEC4</color>
+
+    <color name="btn_send_normal">#02c754</color>
+    <color name="btn_send_pressed">#006633</color>
+
+    <color name="holo_blue">#FF33E5B5</color>
+
+    <color name="graph_color1">#058DC7</color>
+    <color name="graph_color2">#50B432</color>
+    <color name="graph_color3">#ED561B</color>
+    <color name="graph_color4">#DDDF00</color>
+    <color name="graph_color5">#24CBE5</color>
+    <color name="graph_color6">#64E572</color>
+    <color name="graph_color7">#FF9655</color>
+    <color name="graph_color8">#FFF263</color>
+    <color name="graph_color9">#6AF9C4</color>
+
+    <integer-array name="graph_colors">
+        <item>@color/graph_color1</item>
+        <item>@color/graph_color2</item>
+        <item>@color/graph_color3</item>
+        <item>@color/graph_color4</item>
+        <item>@color/graph_color5</item>
+        <item>@color/graph_color6</item>
+        <item>@color/graph_color7</item>
+        <item>@color/graph_color8</item>
+        <item>@color/graph_color9</item>
+        <item>@color/color1</item>
+        <item>@color/color4</item>
+        <item>@color/color3</item>
+        <item>@color/color2</item>
+        <item>@color/holo_blue</item>
+        <item>@color/btn_send_pressed</item>
+        <item>@color/btn_send_normal</item>
+        <item>@color/bpm_edit_press</item>
+    </integer-array>
+
+</resources>

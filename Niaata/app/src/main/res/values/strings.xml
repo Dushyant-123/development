@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Niaata</string>
+    <string name="prompt_user_id">User Name</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_pno">PhoneNumber</string>
+    <string name="accept_msg">By registering on natta.you accept our Terms of Use.</string>
+    <string name="title_activity_home">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <!--  Create Ads text-->
+    <string name="heading">Create Ads</string>
+    <string name="addtitle">AddTitle<font color='RED'>*</font></string>
+
+    <string name="addyourtitle">Add your Title</string>
+    <string name="category">Category<font color='RED'>*</font></string>
+
+    <string name="price">Price<font color='RED'>*</font></string>
+
+    <string name="adddescription">Add Description<font color='RED'>*</font></string>
+
+    <string name="uploadphoto">Upload Photo<font color='RED'>*</font></string>
+    <string name="name">Name<font color='RED'>*</font></string>
+    <string name="phone">Phone<font color='RED'>*</font></string>
+    <string name="enteacity">Enter a City</string>
+
+    <string name="terms">Terms &amp; Conditions</string>
+    <string name="displayads">Display Ads</string>
+    <string name="adshistory">Ads History</string>
+
+    <string name="dummytext">Lorem ipsum dolor sit amet, ex nam eirmod nostrud. Civibus copiosae scripserit vel cu, per et sanctus tibique detracto. Quaestio suavitate constituam ex mei, ne natum liber vidisse pri. Tibique constituto voluptatum est an, doctus tibique id eum. Cu sea dicant comprehensam, vel et ferri ipsum aperiam. Brute nemore mandamus duo cu, et ius quando nonumy antiopam. Mei sumo hinc fierent an, nostro latine vel ei.</string>
+
+
+
+        <string-array name="spinneritems">
+            <item>Choose your Category</item>
+            <item>Mobile</item>
+            <item>Pets</item>
+            <item>Cars</item>
+            <item>Books</item>
+        </string-array>
+
+        <string-array name="spinnercity">
+            <item>Choose your City</item>
+            <item>Noida</item>
+            <item>Delhi</item>
+            <item>Jaipur</item>
+            <item>Alwar</item>
+        </string-array>
+
+</resources>

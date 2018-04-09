@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@mipmap/profile_grey"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_category"
+            android:icon="@mipmap/category"
+            android:title="Categories" />
+        <item
+            android:id="@+id/nav_postads"
+            android:icon="@mipmap/post"
+            android:title="Post Ads" />
+        <item
+            android:id="@+id/nav_adshistory"
+            android:icon="@mipmap/history"
+            android:title="Ads History" />
+    <item
+        android:id="@+id/nav_msgnotification"
+        android:icon="@mipmap/notification_g"
+        android:title="Messages or Notification" />
+    <item
+        android:id="@+id/nav_location"
+        android:icon="@mipmap/location"
+        android:title="Location" />
+    <item
+        android:id="@+id/nav_allpayment"
+        android:icon="@mipmap/payments"
+        android:title="All Payment" />
+    <item
+        android:id="@+id/nav_setting"
+        android:icon="@mipmap/settings"
+        android:title="Settings" />
+    <item
+        android:id="@+id/nav_help"
+        android:icon="@mipmap/help"
+        android:title="Help" />
+    <item
+        android:id="@+id/nav_contusus"
+        android:icon="@mipmap/contact"
+        android:title="Contact Us" />
+    <item
+        android:id="@+id/nav_terms"
+        android:icon="@mipmap/terms"
+        android:title="Terms &amp; Conditions " />
+
+
+
+
+</menu>
