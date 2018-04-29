@@ -28,6 +28,7 @@
             android:layout_height="35dp"
             android:id="@+id/password"
             android:padding="@dimen/margin_small"
+            android:inputType="textPassword"
             android:layout_marginTop="@dimen/margin_small"
 
             android:layout_marginBottom="@dimen/margin_small"

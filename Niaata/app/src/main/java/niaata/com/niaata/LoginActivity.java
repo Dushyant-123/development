@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 /**
  * Created by POI on 3/25/2018.
  */
@@ -49,12 +51,26 @@ public class LoginActivity extends AppCompatActivity
               SignUpBtn.setOnClickListener(new View.OnClickListener() {
                   @Override
                   public void onClick(View v) {
-                      Intent i = new Intent(LoginActivity.this, SignUpActivity.class);
-                      startActivity(i);
+                      Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                      startActivityForResult(intent, 2000);
 
                   }
               });
 
           }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2000 && resultCode == RESULT_OK) {
+
+
+        }
+
+
+
+    }
 }
 

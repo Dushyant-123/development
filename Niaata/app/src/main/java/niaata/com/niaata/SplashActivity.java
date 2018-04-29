@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
+import niaata.com.niaata.preferences.POPreferences;
+
 /**
  * Created by POI on 3/25/2018.
  */
@@ -31,8 +33,18 @@ public class SplashActivity   extends AppCompatActivity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(i);
+                if (POPreferences.getEmail(SplashActivity.this).equalsIgnoreCase(""))
+                {
+
+
+                    Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(SplashActivity.this, HomeActivity.class);
+                    startActivity(i);
+                }
+
 
                 // close this activity
                 finish();

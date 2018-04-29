@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">Niaata</string>
     <string name="prompt_user_id">User Name</string>
+    <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_pno">PhoneNumber</string>
+    <string name="country_code">91</string>
     <string name="accept_msg">By registering on natta.you accept our Terms of Use.</string>
+    <string name="signupsuccessmsg">user saved successfully</string>
+    <string name="checkterm">Please check terms</string>
     <string name="title_activity_home">Home</string>
-
+    <string name="blankerrormsg">Please fill the all fields</string>
+    <string name="network_error">Network Failure. Please try again later.</string>
+    <string name="error_fetching_result">Something went wrong. Please try again later.</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

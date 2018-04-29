@@ -3,71 +3,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@mipmap/register"
-    tools:context=".LoginActivity">
+    tools:context=".SignUpActivity">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
 
-        android:gravity="bottom|center"
-        android:orientation="vertical">
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:id="@+id/username"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-            android:padding="@dimen/margin_small"
-            android:layout_marginBottom="@dimen/margin_small"
-            android:background="@drawable/roundededittext"
+            android:layout_marginTop="400dp"
+            android:gravity="bottom|center"
+            android:orientation="vertical">
 
-            android:hint="@string/prompt_user_id"/>
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="250dp"
 
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:id="@+id/password"
+                android:layout_height="35dp"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@drawable/roundededittext"
+                android:hint="@string/prompt_user_id"
+                android:padding="@dimen/margin_small" />
 
-            android:layout_marginBottom="@dimen/margin_small"
-            android:padding="@dimen/margin_small"
-            android:background="@drawable/roundededittext"
-            android:hint="@string/prompt_password"/>
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:id="@+id/phonemunber"
-            android:layout_marginBottom="@dimen/margin_small"
-            android:padding="@dimen/margin_small"
-            android:background="@drawable/roundededittext"
-            android:hint="@string/prompt_pno"/>
-        <CheckBox android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleX="0.70"
-            android:scaleY="0.70"
-            android:gravity="center"
-            android:text="@string/accept_msg"
-            android:id="@+id/termcheck"
-            android:textColor="@color/colorWhite"
-            android:button="@drawable/checkbox_background"  />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@drawable/roundededittext"
+                android:hint="@string/prompt_email"
+                android:padding="@dimen/margin_small" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:inputType="textPassword"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@drawable/roundededittext"
+                android:hint="@string/prompt_password"
+                android:padding="@dimen/margin_small" />
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/countycode"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:inputType="number"
+                    android:background="@drawable/roundededittext"
+                    android:hint="@string/country_code"
+                    android:maxLength="2"
+                    android:padding="@dimen/margin_small"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/phonemunber"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/roundededittext"
+                    android:hint="@string/prompt_pno"
+                    android:inputType="number"
+                    android:padding="@dimen/margin_small" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/termcheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/checkbox_background"
+                android:gravity="center"
+                android:scaleX="0.70"
+                android:scaleY="0.70"
+                android:text="@string/accept_msg"
+                android:textColor="@color/colorWhite" />
 
 
-        <Button
-            android:id="@+id/signbtn"
-            android:layout_width="250dp"
-            android:layout_marginBottom="@dimen/margin_small"
-            android:layout_height="35dp"
-            android:layout_below="@+id/loginbtn"
-            android:background="@mipmap/registerbtn" />
-    </LinearLayout>
-
+            <Button
+                android:id="@+id/signbtn"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/loginbtn"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@mipmap/registerbtn" />
+        </LinearLayout>
     <ProgressBar
         android:id="@+id/progress_bar"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone" />
-</FrameLayout>
+        android:visibility="gone"
+       />
+
+
+  </FrameLayout>
