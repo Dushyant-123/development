@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 var _navigator;
-export default class ThingsYouNeedpage extends Component<Props> {
+export default class ThingsYouNeedpage extends Component {
 
 Thingsyourneed() {
   console.log("hello call");

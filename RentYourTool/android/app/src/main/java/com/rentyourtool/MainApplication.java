@@ -7,6 +7,7 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.ReactApplication;
+import com.devfd.RNGeocoder.RNGeocoderPackage;
 import im.shimo.react.cookie.CookieManagerPackage;
 import com.RNTextInputMask.RNTextInputMaskPackage;
 import com.imagepicker.ImagePickerPackage;
@@ -39,6 +40,7 @@ private static CallbackManager mCallbackManager = CallbackManager.Factory.create
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNGeocoderPackage(),
             new CookieManagerPackage(),
             new RNTextInputMaskPackage(),
             new ImagePickerPackage(),

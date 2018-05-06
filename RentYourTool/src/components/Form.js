@@ -4,15 +4,16 @@ import {
   Text,
   View,
   TextInput,
-   Image,
-   NetInfo,
+  Image,
+  NetInfo,
   TouchableOpacity,
-   Alert, 
+  AsyncStorage,
+  Alert, 
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import config from '../common/config';
 import Spinner from 'react-native-loading-spinner-overlay';
-export default class Logo extends Component<{}> 
+export default class Logo extends Component
 {
 constructor(props) 
 {
@@ -63,6 +64,10 @@ constructor(props)
            //var Userinfo=data.userInfo;
            console.log(data.userInfo.token);
            console.log(data.userInfo);
+          AsyncStorage.setItem('userId', JSON.stringify(data.userInfo.userId)); 
+          AsyncStorage.setItem('token', JSON.stringify(data.userInfo.token)); 
+          
+           
            this.redirect();
          
          }).catch((error) => 
@@ -80,7 +85,7 @@ constructor(props)
   }
   redirect() {
     console.log('Call Method');
-    Actions.mainscreen()
+    Actions.Dashboard()
   }
   
   render()

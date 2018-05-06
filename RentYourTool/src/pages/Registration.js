@@ -20,7 +20,7 @@ import styles from '../style/registrationStyle';
 import Spinner from 'react-native-loading-spinner-overlay';
 import ImagePicker from 'react-native-image-picker';
 import Form from '../components/Form';
-export default class Registration extends Component<{}> {
+export default class Registration extends Component {
 constructor()
   {
     super();

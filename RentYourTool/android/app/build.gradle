@@ -138,6 +138,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-geocoder')
     compile project(':react-native-cookie')
     compile project(':react-native-text-input-mask')
     compile project(':react-native-image-picker')

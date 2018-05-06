@@ -43,6 +43,7 @@
 		0748A6E9C6184DCFB2297416 /* libRNTextInputMask.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD48D9BA93449E4816D5FE4 /* libRNTextInputMask.a */; };
 		07C346BBFC6241C3BB250B9E /* libRNCookieManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BC688EBC504B7CB12462E5 /* libRNCookieManager.a */; };
 		16C4AAB47D9B4E09863F5759 /* RNCookieManagerTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 169DCBB06C694E3DB948E47F /* RNCookieManagerTests.xctest */; };
+		927E1AB294DF4A9096C89F94 /* libRNGeocoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4D02732AF24C48AB10A44B /* libRNGeocoder.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -359,6 +360,8 @@
 		0FD761A5CC284218AA145C55 /* RNCookieManager.xcodeproj */ = {isa = PBXFileReference; name = "RNCookieManager.xcodeproj"; path = "../node_modules/react-native-cookie/ios/RNCookieManager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		35BC688EBC504B7CB12462E5 /* libRNCookieManager.a */ = {isa = PBXFileReference; name = "libRNCookieManager.a"; path = "libRNCookieManager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		169DCBB06C694E3DB948E47F /* RNCookieManagerTests.xctest */ = {isa = PBXFileReference; name = "RNCookieManagerTests.xctest"; path = "RNCookieManagerTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
+		3E515B5C224F45BD8905E365 /* RNGeocoder.xcodeproj */ = {isa = PBXFileReference; name = "RNGeocoder.xcodeproj"; path = "../node_modules/react-native-geocoder/ios/RNGeocoder.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		5B4D02732AF24C48AB10A44B /* libRNGeocoder.a */ = {isa = PBXFileReference; name = "libRNGeocoder.a"; path = "libRNGeocoder.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +396,7 @@
 				0748A6E9C6184DCFB2297416 /* libRNTextInputMask.a in Frameworks */,
 				07C346BBFC6241C3BB250B9E /* libRNCookieManager.a in Frameworks */,
 				16C4AAB47D9B4E09863F5759 /* RNCookieManagerTests.xctest in Resources */,
+				927E1AB294DF4A9096C89F94 /* libRNGeocoder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +588,7 @@
 				FCFB6FB236C74F17BAF37F04 /* RNImagePicker.xcodeproj */,
 				082B376AA9BD40EC9324A18A /* RNTextInputMask.xcodeproj */,
 				0FD761A5CC284218AA145C55 /* RNCookieManager.xcodeproj */,
+				3E515B5C224F45BD8905E365 /* RNGeocoder.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1216,6 +1221,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1224,6 +1230,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 					"$(SRCROOT)\..\node_modules\react-native-text-input-mask\ios\RNTextInputMask\RNTextInputMask/**",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-geocoder\ios\RNGeocoder",
 				);
 			};
 			name = Debug;
@@ -1250,6 +1257,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1258,6 +1266,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 					"$(SRCROOT)\..\node_modules\react-native-text-input-mask\ios\RNTextInputMask\RNTextInputMask/**",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-geocoder\ios\RNGeocoder",
 				);
 			};
 			name = Release;
@@ -1284,6 +1293,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 					"$(SRCROOT)\..\node_modules\react-native-text-input-mask\ios\RNTextInputMask\RNTextInputMask/**",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-geocoder\ios\RNGeocoder",
 				);
 			};
 			name = Debug;
@@ -1309,6 +1319,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 					"$(SRCROOT)\..\node_modules\react-native-text-input-mask\ios\RNTextInputMask\RNTextInputMask/**",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-geocoder\ios\RNGeocoder",
 				);
 			};
 			name = Release;
@@ -1344,6 +1355,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1352,6 +1364,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 					"$(SRCROOT)\..\node_modules\react-native-text-input-mask\ios\RNTextInputMask\RNTextInputMask/**",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-geocoder\ios\RNGeocoder",
 				);
 			};
 			name = Debug;
@@ -1387,6 +1400,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1395,6 +1409,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 					"$(SRCROOT)\..\node_modules\react-native-text-input-mask\ios\RNTextInputMask\RNTextInputMask/**",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-geocoder\ios\RNGeocoder",
 				);
 			};
 			name = Release;
@@ -1429,6 +1444,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1437,6 +1453,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 					"$(SRCROOT)\..\node_modules\react-native-text-input-mask\ios\RNTextInputMask\RNTextInputMask/**",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-geocoder\ios\RNGeocoder",
 				);
 			};
 			name = Debug;
@@ -1471,6 +1488,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1479,6 +1497,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
 					"$(SRCROOT)\..\node_modules\react-native-text-input-mask\ios\RNTextInputMask\RNTextInputMask/**",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-geocoder\ios\RNGeocoder",
 				);
 			};
 			name = Release;

@@ -5,18 +5,29 @@ import {
   View,
   StatusBar ,
   TouchableOpacity,
-  ImageBackground
+  ImageBackground,
+  Platform
 } from 'react-native';
 
 import Logo from '../components/Logo';
 import Form from '../components/Form';
 import CreateButton from '../components/CreateButton';
 import FacebookButton from '../components/FacebookButton';
-
 import {Actions} from 'react-native-router-flux';
 
 
-export default class Login extends Component<{}> {
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      
+    };
+  }
+
+  componentDidMount() {
+    console.log("Did Mount called");
+  }
 
 	signup() {
 		Actions.signup()

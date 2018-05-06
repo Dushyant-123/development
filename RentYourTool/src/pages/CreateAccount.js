@@ -31,7 +31,7 @@ import ImagePicker from 'react-native-image-picker';
 import {Actions} from 'react-native-router-flux';
 import TextInputMask from 'react-native-text-input-mask';
 
-export default class CreateAccount extends Component<Props> {
+export default class CreateAccount extends Component {
 
   static navigationOptions = {
         title: 'Create Account',

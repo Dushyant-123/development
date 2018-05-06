@@ -17,7 +17,7 @@ import {Actions} from 'react-native-router-flux';
 
 
 
-export default class FacebookButton extends Component<{}> {
+export default class FacebookButton extends Component {
     constructor(props) {
     super(props)
     this.state = {

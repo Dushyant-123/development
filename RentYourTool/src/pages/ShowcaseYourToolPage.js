@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 var _navigator;
-export default class ShowcaseYourToolPage extends Component<Props> {
+export default class ShowcaseYourToolPage extends Component {
 
 ShowcaseSkip() {
     Actions.ShowcaseSkip()

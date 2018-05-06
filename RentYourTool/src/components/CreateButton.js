@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import {Actions} from 'react-native-router-flux';
-export default class CreateButton extends Component<{}> {
+export default class CreateButton extends Component {
 
   registration() {
     Actions.registration()
