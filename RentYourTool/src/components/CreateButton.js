@@ -18,8 +18,8 @@ export default class CreateButton extends Component {
 		return(
 			<View style={styles.container}>
 				<TouchableOpacity  onPress={this.registration} style={styles.button}>
-          
-          <Image source={require('../images/createnew.png')}/>
+          <Text style={styles.buttonText}>Create New Account</Text>
+          {/* <Image resizeMode="contain"  source={require('../images/createnew.png')}/> */}
 
         </TouchableOpacity>
 
@@ -32,19 +32,25 @@ const styles = StyleSheet.create({
    container : {
     flexGrow: 1,
     justifyContent:'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    width : 300,
   },
   
  button : {
     width: undefined,
     height: undefined,
-    alignSelf: 'stretch'
+    alignSelf: 'stretch',
+    backgroundColor : '#00c1af',
+    height : 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
    
   },
 
   buttonText: {
     fontSize: 20,
-    fontWeight: '500',
+    // fontWeight: '500',
     color: '#ffffff',
     textAlign: 'center',
   }

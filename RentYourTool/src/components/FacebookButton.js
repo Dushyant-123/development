@@ -56,14 +56,14 @@ _fbAuth() {
 		return(
 			<View style={styles.container}>
 				<TouchableOpacity style={styles.facebookbutton} onPress={this._fbAuth}>
-		    	 <Image source={require('../images/face.png')}/>
+		    	 <Image resizeMode={'contain'} source={require('../images/face.png')} style={{width : 310}}/>
 
 			 </TouchableOpacity>
 			 		 		 	
-		<View>
+		<View style={{width : '80%'}}>
         {!this.state.token ? (
           <TouchableOpacity style={styles.instagramkbutton} onPress={() => this.refs.ins.show()}>
-            <Image source={require('../images/insta.png')}/>
+            <Image resizeMode={'contain'} style={{width : 310}}  source={require('../images/insta.png')}/>
           </TouchableOpacity>
         ) : (
                         
@@ -106,8 +106,7 @@ const styles = StyleSheet.create({
 	instagramkbutton : {
 	    alignSelf: 'stretch',
 		width: undefined,
-		height: undefined
-	   
+		height: undefined,
 	},
 
 	buttonText: {

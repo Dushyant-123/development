@@ -40,7 +40,7 @@ export default class Login extends Component {
 				<Logo/>
          <CreateButton type=" Create New Account"/>
          <Text style={styles.logoText}>or Connect with</Text>
-          <FacebookButton/>
+          <FacebookButton style={{width : 300}}/>
 			  <View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Already have an account? Then </Text>
 					<TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Sign in!</Text></TouchableOpacity>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   signupButton: {
     color: '#fcb752',
   	fontSize:16,    
-  	fontWeight:'500'
+  	// fontWeight:'500'
   },
    logoText : {
     marginVertical: 10,

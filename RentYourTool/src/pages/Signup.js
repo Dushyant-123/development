@@ -53,16 +53,17 @@ const styles = StyleSheet.create({
    
     flex: 1,
     alignItems:'center',
-    justifyContent :'center'
+    justifyContent :'center',
+    
   },
   signupTextCont : {
-    flexGrow: 1,
+    //flexGrow: 1,
     alignItems:'flex-end',
     justifyContent :'center',
-    flexDirection:'row'
+    flexDirection:'row',
   },
    forgotTextCont : {
-    flexGrow: 1,
+   // flexGrow: 1,
     alignItems:'flex-end',
     justifyContent :'center',
     flexDirection:'row'
@@ -74,10 +75,10 @@ const styles = StyleSheet.create({
   signupButton: {
     color: '#c48383',
     fontSize:16,
-    fontWeight:'500'
+    // fontWeight:'500'
   },
    logoText : {
-    marginVertical: 10,
+    //marginVertical: 10,
     fontSize:18,
     color: 'rgba(255, 255, 255, 1.0)',
   }
