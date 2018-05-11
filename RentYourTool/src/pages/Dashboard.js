@@ -8,8 +8,11 @@ import {
   Platform,
   Image,
   ToolbarAndroid,
-  AsyncStorage
+  AsyncStorage,
+  Dimensions
 } from 'react-native';
+var { height,width } = Dimensions.get('window');
+
 import {Actions} from 'react-native-router-flux';
 import Geocoder from 'react-native-geocoder';
 
@@ -22,8 +25,11 @@ export default class Dashboard extends Component {
             latitude: null,
             longitude: null,
             error: null,
+            toolDis : [],
+            isInfoAvailable : false
              
         };
+        
     }
 
     onRegionChange(region, lastLat, lastLong) {
@@ -44,6 +50,7 @@ export default class Dashboard extends Component {
           lat: lastLat ,
           lng: lastLong 
         };
+        
         
         console.log('This is latlng', latLng);
        // this.setState({ final_latitude: latLng.lat, final_longitude: latLng.lng,isBtnPckupVisible:true });
@@ -69,6 +76,13 @@ export default class Dashboard extends Component {
     }
     
     componentDidMount() {
+      if(this.props.toolInform != undefined){
+        this.setState({
+          toolDis : this.props.toolInform,
+          isInfoAvailable : true
+        });
+      }
+
       if (Platform.Version < 23) {
         console.log('I am in lower android version');
         navigator.geolocation.getCurrentPosition(
@@ -211,7 +225,25 @@ export default class Dashboard extends Component {
             <View  style={{flex:.6, }}>
                 <TouchableOpacity style= {{ height : 100,  justifyContent : 'center',  alignSelf : 'center'}} onPress={this.mainscreen}>
                   <Text style= {{ fontSize: 20, color: "#333"}}> Tap here to next Screen </Text>
-                </TouchableOpacity>          
+                </TouchableOpacity> 
+                {
+                      this.state.isInfoAvailable ?
+                <View style={styles.sectionProfile}>
+                    <View style={styles.profileImage}>
+                        <Image style={styles.logo} source={require('../images/download.jpg')} />
+                        
+                        
+                    </View>
+                    
+                      <View style={{justifyContent : 'center', alignContent : 'center', flex : 1, flexDirection : 'column'}}>
+                      <Text style={{color : 'white', fontSize: 20}}>Name : {this.state.toolDis != [] ? this.state.toolDis.toolName : ''}</Text>
+                        <Text style = {{color:'white', fontSize: 20, justifyContent : 'center', textAlign : 'center'}}>
+                        Rate  : ${this.state.toolDis != []? this.state.toolDis.toolRentCurrencyValue : ''} / day</Text>
+                        </View>
+                        
+                        
+                    
+                </View>: <Text>''</Text>    }    
             </View>
 
           </View>
@@ -237,6 +269,33 @@ var styles = StyleSheet.create({
   toolbar: {
     height: 56,
     backgroundColor: '#4883da',
+  },
+  sectionProfile:{
+    height:height*0.3,
+    width : width,
+    backgroundColor:'#c40c0c',
+    // justifyContent:'center',
+    alignContent:'center',
+    alignSelf:'center',
+  },
+
+  profileImage:{
+    backgroundColor:'#f8f8f8',
+    alignSelf:'center',
+    justifyContent:'center',
+    alignContent:'flex-start',
+    height:width*0.25,
+    width:width*0.25,
+    borderRadius:50,
+    
+  },
+  logo:{
+    height:width*0.22,
+    width:width*0.22,
+    overflow:'hidden',
+    alignSelf:'center',
+    borderRadius : 50,
+    
   },
 
 });

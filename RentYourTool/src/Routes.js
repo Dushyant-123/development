@@ -27,7 +27,7 @@ export default class Routes extends Component{
 				  
 			      <Scene key="registration" component={CreateAccount} title="Register"/>
 			     <Scene key="response" component={Signup} title="Login"/>			   
-			     <Scene key="mainscreen" component={ShowcaseYourToolPage} title="SHOWCASE YOUR TOOL"/>
+			     <Scene key="mainscreen" component={ShowcaseYourToolPage} title="SHOWCASE YOUR TOOL" />
 			     <Scene key="ShowcaseSkip" component={Thingstoknowpage} title="THINGS TO KNOW BEFORE YOU START" />
 			     <Scene key="ThingstoknowSkip" component={ThingsYouNeedpage} title="THINGS YOU NEED BEFORE YOU START"/>
 		         <Scene key="Thingsyourneed" component={ToolDetailspage} title="TELL US ABOUT YOUR TOOL" />

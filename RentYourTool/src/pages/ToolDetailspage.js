@@ -47,8 +47,15 @@ export default class ToolDetailspage extends Component {
       toolcondition : '',
       toolCatID : 0,
       toolNameID : 0,
+      token : ''
       
     }
+    AsyncStorage.getItem("token").then((value) => {
+      console.log("\n\n\n userIduserIduserIduserIduserId === ",JSON.parse(value));
+      this.setState({
+        token : JSON.parse(value)
+      })
+    });
   }
 
   TOOLAVAILABILITY() {
@@ -103,7 +110,7 @@ export default class ToolDetailspage extends Component {
       if(isConnected)
       {
         this.setState({IsLoaderVisible: true})
-        var URL=config.BASE_URL+'ToolsConfiguration/GetCategory?token='+'RWlKQWhKN3ZIZHBsTHBlanlFcm9NMGxMNm9CSHEwaGYrV2gvWm1BTU9aaz06dG9yYXZlZXNobWlzaHJhQGdtYWlsLmNvbTo2MzY2MTExNjk1NzM2Mjg2Mzc6MA==';
+        var URL=config.BASE_URL+'ToolsConfiguration/GetCategory?token='+this.state.token;
         console.log(URL);  
       fetch(URL,
       {
@@ -163,8 +170,7 @@ fetchToolNames(catName){
       if(isConnected)
       {
         this.setState({IsLoaderVisible: true})
-        var URL=config.BASE_URL+'ToolsConfiguration/GetToolName?token='+
-        'RWlKQWhKN3ZIZHBsTHBlanlFcm9NMGxMNm9CSHEwaGYrV2gvWm1BTU9aaz06dG9yYXZlZXNobWlzaHJhQGdtYWlsLmNvbTo2MzY2MTExNjk1NzM2Mjg2Mzc6MA==&catId='+catId;
+        var URL=config.BASE_URL+'ToolsConfiguration/GetToolName?token='+this.state.token+'&catId='+catId;
         console.log(URL);  
       fetch(URL,
       {

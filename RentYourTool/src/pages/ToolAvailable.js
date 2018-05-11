@@ -48,7 +48,7 @@ export default class ToolAvailable extends Component {
     AsyncStorage.getItem("token").then((value) => {
       console.log("\n\n\n userIduserIduserIduserIduserId === ",JSON.parse(value));
       this.setState({
-        token : value
+        token : JSON.parse(value)
       })
     });
     AsyncStorage.getItem("ToolAvailableData").then((value) => {
@@ -104,14 +104,15 @@ export default class ToolAvailable extends Component {
         }).then((response) => response.json())
           .then((responseJson) => 
           {
-            
-            console.log("JsonDATA",responseJson);
             this.setState({IsLoaderVisible: false})
             var data = responseJson.data;
-            console.log("Data is == ",data);
+
+            var toolInform = {};
+            toolInform.toolRentCurrencyValue = data.toolRentCurrencyValue;
+            toolInform.toolName = data.toolName;
+            
             ToastAndroid.show('Your Tool Detail is Published !', ToastAndroid.SHORT);
-            alert('Your Tool Detail is Published !');
-            Actions.Dashboard()
+            Actions.Dashboard({toolInform : toolInform});
             
           }).catch((error) => 
             {
@@ -119,6 +120,9 @@ export default class ToolAvailable extends Component {
                 
                 console.error("error",error);
             });
+
+            
+
             this.setState({IsLoaderVisible: false})
             
         }
