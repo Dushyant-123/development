@@ -9,12 +9,15 @@ import {
   Image,
   ToolbarAndroid,
   AsyncStorage,
-  Dimensions
+  Dimensions,
+  NetInfo,
+  ScrollView
 } from 'react-native';
 var { height,width } = Dimensions.get('window');
-
+import config from '../common/config';
 import {Actions} from 'react-native-router-flux';
 import Geocoder from 'react-native-geocoder';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 var _navigator;
 export default class Dashboard extends Component {
@@ -25,11 +28,58 @@ export default class Dashboard extends Component {
             latitude: null,
             longitude: null,
             error: null,
-            toolDis : [],
-            isInfoAvailable : false
+            item : [],
+            IsLoaderVisible : false
              
         };
-        
+        AsyncStorage.getItem("token").then((value) => {
+          this.setState({
+            token : JSON.parse(value)
+          })
+          this.getToolList();
+        });
+    }
+
+    getToolList(){ 
+      console.log("\n\n\n 5 === ",this.state.token);
+      
+      NetInfo.isConnected.fetch().then(isConnected => 
+      {
+        console.log('\n\n\n 112233 First, is ' + (isConnected ? 'online' : 'offline'));
+        if(isConnected)
+        {
+          this.setState({IsLoaderVisible: true})
+          var URL=config.BASE_URL+'ToolsConfiguration/GetToolList?token='+this.state.token;
+          console.log(URL);  
+        fetch(URL,
+        {
+            method: 'GET',
+            headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                    },
+        }).then((response) => response.json())
+          .then((responseJson) => 
+          {
+            
+            this.setState({IsLoaderVisible: false})
+            var data = responseJson.data;
+            console.log("\n\n\n\n dhfjhsdjfhjshdfjhsjdfhjsdh Data is == ",responseJson);
+            this.setState({
+              item : data 
+            });
+          
+          }).catch((error) => 
+            {
+                console.error(error);
+            });
+  
+        }
+        else 
+        {
+                alert('Network not available');
+        }
+      });
     }
 
     onRegionChange(region, lastLat, lastLong) {
@@ -76,13 +126,6 @@ export default class Dashboard extends Component {
     }
     
     componentDidMount() {
-      if(this.props.toolInform != undefined){
-        this.setState({
-          toolDis : this.props.toolInform,
-          isInfoAvailable : true
-        });
-      }
-
       if (Platform.Version < 23) {
         console.log('I am in lower android version');
         navigator.geolocation.getCurrentPosition(
@@ -160,8 +203,7 @@ export default class Dashboard extends Component {
     }
 
     mainscreen(){
-    Actions.mainscreen()
-      
+      Actions.mainscreen()
     }
 
     render() {
@@ -221,30 +263,32 @@ export default class Dashboard extends Component {
 
 
             </View>
-            
+            <ScrollView contentContainerStyle={styles.contentContainer}>
+            <Spinner visible={this.state.IsLoaderVisible} />
+                
             <View  style={{flex:.6, }}>
                 <TouchableOpacity style= {{ height : 100,  justifyContent : 'center',  alignSelf : 'center'}} onPress={this.mainscreen}>
                   <Text style= {{ fontSize: 20, color: "#333"}}> Tap here to next Screen </Text>
                 </TouchableOpacity> 
-                {
-                      this.state.isInfoAvailable ?
-                <View style={styles.sectionProfile}>
-                    <View style={styles.profileImage}>
-                        <Image style={styles.logo} source={require('../images/download.jpg')} />
-                        
-                        
-                    </View>
-                    
-                      <View style={{justifyContent : 'center', alignContent : 'center', flex : 1, flexDirection : 'column'}}>
-                      <Text style={{color : 'white', fontSize: 20}}>Name : {this.state.toolDis != [] ? this.state.toolDis.toolName : ''}</Text>
-                        <Text style = {{color:'white', fontSize: 20, justifyContent : 'center', textAlign : 'center'}}>
-                        Rate  : ${this.state.toolDis != []? this.state.toolDis.toolRentCurrencyValue : ''} / day</Text>
+                
+                  {this.state.item.map((item1, key1) => (
+                    <View style={styles.sectionProfile} elevation={5} key={key1}>
+                        <View style={styles.profileImage}>
+                            <Image style={styles.logo} source={require('../images/download.jpg')} />
                         </View>
-                        
-                        
-                    
-                </View>: <Text>''</Text>    }    
+                          <View style={{justifyContent : 'center', alignContent : 'center', flex : 1, flexDirection : 'column'}}>
+                            <Text style={{color : 'white', fontSize: 20, justifyContent : 'center', textAlign : 'center'}}>Name : {item1.toolName }</Text>
+                              <Text style = {{color:'white', fontSize: 20, justifyContent : 'center', textAlign : 'center'}}>
+                                Rate  : ${item1.toolRentCurrencyValue } / day
+                            </Text>
+                          </View>
+                    </View>                  
+                  )
+                  )}
+                      
             </View>
+  </ScrollView>
+            
 
           </View>
         </View>
@@ -259,6 +303,9 @@ var styles = StyleSheet.create({
     paddingBottom : 10, 
     backgroundColor:'#ffffff'
   },
+  contentContainer: {
+    paddingVertical: 20
+  },
   ImageStyle: {
     padding: 10,
     height: 25,
@@ -271,6 +318,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#4883da',
   },
   sectionProfile:{
+    marginBottom : 10,
     height:height*0.3,
     width : width,
     backgroundColor:'#c40c0c',
