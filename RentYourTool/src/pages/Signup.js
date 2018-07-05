@@ -11,58 +11,52 @@ import {
 import Logo from '../components/Logo';
 import Form from '../components/Form';
 import FacebookButton from '../components/FacebookButton';
-
 import {Actions} from 'react-native-router-flux';
 
-export default class Signup extends Component<{}> {
-
+export default class Signup extends Component {
   goBack() {
-      Actions.pop();
+    Actions.pop();
   }
   forgot() {
     Actions.forgot()
   }
-
   render() {
+    console.log(this.props, 'DATA')
     return(
-        <ImageBackground source={require('../images/backimage.png')} style={styles.container}>
-     
-      <View style={styles.container}>
-        <Logo/>
-        <Form type="Log In"/>
-       <Text style={styles.logoText}>or Sign In with</Text>
+      <ImageBackground source={require('../images/login.jpg')} style={styles.container}>
+        <View style={styles.container}>
+          <Logo/>
+          <Form type="Log In" changePassword={this.props.oldPassword} email={this.props.userEmail}/>
+          <Text style={styles.logoText}>or Sign In with</Text>
           <FacebookButton/>
-        <View style={styles.signupTextCont}>
-          <Text style={styles.signupText}>Don't have an account yet? Then </Text>
-          <TouchableOpacity onPress={this.goBack}><Text style={styles.signupButton}>Sign Up!</Text></TouchableOpacity>
+          {
+            this.props.oldPassword === undefined && 
+            <View>
+              <View style={styles.signupTextCont}>
+                <Text style={styles.signupText}>Already have an account? Then </Text>
+                <TouchableOpacity onPress={this.goBack}><Text style={styles.signupButton}>Sign In!</Text></TouchableOpacity>
+              </View>
+            </View>
+          } 
         </View>
-        <View style={styles.forgotTextCont}>
-          <Text style={styles.signupText}>Forgot </Text>
-          <TouchableOpacity onPress={this.forgot}><Text style={styles.signupButton}>Password?</Text></TouchableOpacity>
-        </View>
-
-      </View> 
       </ImageBackground>
-      
-      )
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container : {
-   
     flex: 1,
     alignItems:'center',
-    justifyContent :'center'
+    justifyContent :'center',
   },
   signupTextCont : {
-    flexGrow: 1,
+    //flexGrow: 1,
     alignItems:'flex-end',
     justifyContent :'center',
-    flexDirection:'row'
+    flexDirection:'row',
   },
    forgotTextCont : {
-    flexGrow: 1,
     alignItems:'flex-end',
     justifyContent :'center',
     flexDirection:'row'
@@ -74,10 +68,8 @@ const styles = StyleSheet.create({
   signupButton: {
     color: '#c48383',
     fontSize:16,
-    fontWeight:'500'
   },
    logoText : {
-    marginVertical: 10,
     fontSize:18,
     color: 'rgba(255, 255, 255, 1.0)',
   }

@@ -7,17 +7,17 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.ReactApplication;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
+import com.imagepicker.ImagePickerPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.devfd.RNGeocoder.RNGeocoderPackage;
 import im.shimo.react.cookie.CookieManagerPackage;
 import com.RNTextInputMask.RNTextInputMaskPackage;
-import com.imagepicker.ImagePickerPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-
-
-import org.devio.rn.splashscreen.SplashScreenReactPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -39,11 +39,13 @@ private static CallbackManager mCallbackManager = CallbackManager.Factory.create
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new SplashScreenReactPackage(),
+            new ImagePickerPackage(),
+            new VectorIconsPackage(),
+            new RNGeocoderPackage(),
             new CookieManagerPackage(),
             new RNTextInputMaskPackage(),
-            new ImagePickerPackage(),
-            new FBSDKPackage(mCallbackManager),
-            new SplashScreenReactPackage()
+            new FBSDKPackage(mCallbackManager)
       );
     }
 

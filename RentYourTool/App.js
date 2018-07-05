@@ -15,6 +15,7 @@ import {
 
 import Routes from './src/Routes';
 import SplashScreen from 'react-native-splash-screen'
+// import NavigationTest from './src/test';
 
 
 export default class App extends Component<{}> {
@@ -41,3 +42,13 @@ const styles = StyleSheet.create({
     flex: 1,
   }
 });
+
+/*
+<View style={styles.container}>
+        <StatusBar
+           backgroundColor="#1c313a"
+           barStyle="light-content"
+         />
+        <Routes/>
+      </View>
+*/

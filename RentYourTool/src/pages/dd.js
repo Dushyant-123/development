@@ -20,7 +20,7 @@ import styles from '../style/registrationStyle';
 import Spinner from 'react-native-loading-spinner-overlay';
 import ImagePicker from 'react-native-image-picker';
 import Form from '../components/Form';
-export default class Registration extends Component<{}> {
+export default class Registration extends Component {
 constructor()
   {
     super();
@@ -57,27 +57,27 @@ constructor()
         {
             this.setState({IsLoaderVisible: true})
             const { UserId }  = this.state;
-            console.log(UserId);
+
             const { UserName }  = this.state;
-            console.log(UserName);
+  
             const { UserPassword }  = this.state
-            console.log(UserPassword);
+  
             const {UserCPassword}=this.state;
-            console.log(UserCPassword);
+    
             const { UserMobile }  = this.state ;
-            console.log(UserMobile);
+   
             const { UserEmail }  = this.state ;
-            console.log(UserEmail);
+     
             const { ImageSource }  = this.state ;
-            console.log(ImageSource);
+        
             const { UserType }  = this.state ;
-            console.log(UserType);
+   
             const { PickerValueHolder }  = this.state ;
-            console.log(PickerValueHolder);
+      
             const { IsUserdeleted }  = this.state ;
-            console.log(IsUserdeleted);
+        
             var URL=config.BASE_URL+'User/RegisterUser';
-            console.log(URL);  
+        
             fetch(URL,  {
               method: 'POST',
               headers: {
@@ -99,20 +99,20 @@ constructor()
             
             }).then((response) => response.status).then((responseJson) => 
                {
-                 console.log("JsonDATA",responseJson);
+             
         
                       this.setState({IsLoaderVisible: false})
-                      alert(responseJson);
+              
                       this.redirect();
                }).catch((error) => 
                                 {
-                                  alert(error);
+                      
                                  console.error(error);
                                 });
         }
         else
         {
-           alert('Network not available');
+           Alert.alert('Network not available');
         }
      });
  }
@@ -138,7 +138,7 @@ constructor()
       ImagePicker.showImagePicker(options, (response) => {
         console.log('Response = ', response);
   
-        if (response.didCancel) {
+        if (response.didCancel) {z
           console.log('User cancelled photo picker');
         }
         else if (response.error) {
@@ -162,7 +162,7 @@ constructor()
       });
     }
      redirect() {
-    console.log('Call Method');
+  
     Actions.response()
   }
   render(){
